@@ -1,4 +1,5 @@
 import ListGroup from "./components/ListGroup";
+import Alert from "./components/Alert";
 
 function App() {
   let items = ["Milano", "Firenze", "Roma", "Napoli", "Catania"];
@@ -13,6 +14,10 @@ function App() {
         heading={"Cities"}
         onSelectedItem={handleSelectItem}
       />
+      <Alert>
+        <h1>Passare al componente figlio</h1>
+        <p>ciao, prova di passing children</p>
+      </Alert>
     </div>
   );
 }

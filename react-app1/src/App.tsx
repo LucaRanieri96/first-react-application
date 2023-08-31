@@ -1,12 +1,16 @@
 import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
+import ButtonAlert from "./components/ButtonAlert";
+import { useState } from "react";
 
 function App() {
   let items = ["Milano", "Firenze", "Roma", "Napoli", "Catania"];
   const handleSelectItem = (item: string) => {
     console.log(item);
   };
+
+  const [buttonAlertVisible, setAlertVisibility] = useState(false);
 
   return (
     <div>
@@ -19,7 +23,8 @@ function App() {
         <h1>Passare al componente figlio</h1>
         <p>ciao, prova di passing children</p>
       </Alert>
-      <Button onClick={() => console.log("Button Clicked")}>Premimi</Button>
+      <Button onClick={() => setAlertVisibility(true)}>Premimi</Button>
+      { buttonAlertVisible && <ButtonAlert></ButtonAlert>}
     </div>
   );
 }
